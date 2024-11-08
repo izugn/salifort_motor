@@ -21,6 +21,21 @@ Describe the dataset and any preprocessing steps.
 | department | str | The employee's department |
 | salary | str | The employee's salary (low, medium, or high) |
 
+Descriptive stats:
+
+| #  | Column                 | Non-Null Count | Dtype  |
+|:--|:----------------------|:---------------|:-------|
+| 0  | satisfaction_level     | 14999 non-null | float64|
+| 1  | last_evaluation        | 14999 non-null | float64|
+| 2  | number_project         | 14999 non-null | int64  |
+| 3  | average_montly_hours   | 14999 non-null | int64  |
+| 4  | time_spend_company     | 14999 non-null | int64  |
+| 5  | Work_accident          | 14999 non-null | int64  |
+| 6  | left                   | 14999 non-null | int64  |
+| 7  | promotion_last_5years  | 14999 non-null | int64  |
+| 8  | Department             | 14999 non-null | object |
+| 9  | salary                 | 14999 non-null | object |
+
 # EDA Findings:
 A brief summary of your Exploratory Data Analysis (EDA) insights. Include a few key graphs (saved as images in the images/ folder).
 # Modeling Approach:
