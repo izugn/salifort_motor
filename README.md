@@ -6,22 +6,8 @@ Main problem: What are the major drivers of employee turnover? What’s likely t
 Goal: Data-driven suggestions to HR management, based EDA findings and modeling results.
 
 # Dataset Description:
-Describe the dataset and any preprocessing steps.
 
-| Column name | Type | Description |
-|:------------|:-----|:------------|
-| satisfaction_level | int64 | The employee's self-reported satisfaction level [0-1] |
-| last_evaluation | int64 | Score of employee's last performance review [0-1] |
-| number_project | int64 | Number of projects employee contributes to |
-| average_monthly_hours | int64 | Average number of hours employee worked per month |
-| time_spend_company | int64 | How long the employee has been with the company (years) |
-| work_accident | int64 | Whether or not the employee experienced an accident while at work (binary) |
-| left | int64 | Whether or not the employee left the company (binary) |
-| promotion_last_5years | int64 | Whether or not the employee was promoted in the last 5 years (binary) |
-| department | str | The employee's department |
-| salary | str | The employee's salary (low, medium, or high) |
-
-Descriptive stats:
+Shape of df: (14999, 10)
 
 | #  | Column                 | Non-Null Count | Dtype  |
 |:--|:----------------------|:---------------|:-------|
@@ -37,20 +23,18 @@ Descriptive stats:
 | 9  | salary                 | 14999 non-null | object |
 
 
-+-------+---------------------+---------------------+--------------------+----------------------+--------------------+---------------------+--------------------+-----------------------+
-|       | satisfaction_level  |   last_evaluation   |   number_project   | average_montly_hours | time_spend_company |    Work_accident    |        left        | promotion_last_5years |
-+-------+---------------------+---------------------+--------------------+----------------------+--------------------+---------------------+--------------------+-----------------------+
-| count |       14999.0       |       14999.0       |      14999.0       |       14999.0        |      14999.0       |       14999.0       |      14999.0       |        14999.0        |
-| mean  | 0.6128335222348156  | 0.7161017401160078  |  3.80305353690246  |  201.0503366891126   | 3.498233215547703  | 0.1446096406427095  | 0.2380825388359224 | 0.021268084538969265  |
-|  std  | 0.24863065106114257 | 0.17116911062327533 | 1.2325923553183522 |  49.94309937128408   | 1.4601362305354812 | 0.35171855238017985 | 0.4259240993802994 |  0.14428146457858232  |
-|  min  |        0.09         |        0.36         |        2.0         |         96.0         |        2.0         |         0.0         |        0.0         |          0.0          |
-|  25%  |        0.44         |        0.56         |        3.0         |        156.0         |        3.0         |         0.0         |        0.0         |          0.0          |
-|  50%  |        0.64         |        0.72         |        4.0         |        200.0         |        3.0         |         0.0         |        0.0         |          0.0          |
-|  75%  |        0.82         |        0.87         |        5.0         |        245.0         |        4.0         |         0.0         |        0.0         |          0.0          |
-|  max  |         1.0         |         1.0         |        7.0         |        310.0         |        10.0        |         1.0         |        1.0         |          1.0          |
-+-------+---------------------+---------------------+--------------------+----------------------+--------------------+---------------------+--------------------+-----------------------+
-
-Shape of df: (14999, 10)
+| Column name | Type | Description |
+|:------------|:-----|:------------|
+| satisfaction_level | int64 | The employee's self-reported satisfaction level [0-1] |
+| last_evaluation | int64 | Score of employee's last performance review [0-1] |
+| number_project | int64 | Number of projects employee contributes to |
+| average_monthly_hours | int64 | Average number of hours employee worked per month |
+| time_spend_company | int64 | How long the employee has been with the company (years) |
+| work_accident | int64 | Whether or not the employee experienced an accident while at work (binary) |
+| left | int64 | Whether or not the employee left the company (binary) |
+| promotion_last_5years | int64 | Whether or not the employee was promoted in the last 5 years (binary) |
+| department | str | The employee's department |
+| salary | str | The employee's salary (low, medium, or high) |
 
 # EDA Findings:
 A brief summary of your Exploratory Data Analysis (EDA) insights. Include a few key graphs (saved as images in the images/ folder).
