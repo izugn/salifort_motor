@@ -1,32 +1,17 @@
 # Analysis of employee data and modeling (source: HR department at Salifort Motor Co.; Google Advanced Data Analytics course capstone project)
 
 # Objective:
-The HR department at Salifort Motors wants to take some initiatives to improve employee satisfaction levels at the company. 
-Main problem: What are the major drivers of employee turnover? What’s likely to make an employee leave the company?
-Goal: Data-driven suggestions to HR management, based EDA findings and modeling results.
+The HR department at Salifort Motors wants to take some initiatives to improve employee satisfaction levels at the company.
+- Main problem: What are the major drivers of employee turnover? What’s likely to make an employee leave the company?
+- Goal: Data-driven suggestions to HR management, based EDA findings and modeling results.
 
 # Dataset Description:
-
-Shape of df: (14999, 10)
-
-| #  | Column                 | Non-Null Count | Dtype  |
-|:--|:----------------------|:---------------|:-------|
-| 0  | satisfaction_level     | 14999 non-null | float64|
-| 1  | last_evaluation        | 14999 non-null | float64|
-| 2  | number_project         | 14999 non-null | int64  |
-| 3  | average_montly_hours   | 14999 non-null | int64  |
-| 4  | time_spend_company     | 14999 non-null | int64  |
-| 5  | Work_accident          | 14999 non-null | int64  |
-| 6  | left                   | 14999 non-null | int64  |
-| 7  | promotion_last_5years  | 14999 non-null | int64  |
-| 8  | Department             | 14999 non-null | object |
-| 9  | salary                 | 14999 non-null | object |
-
+Source: .CSV file; Shape: (14999, 10)
 
 | Column name | Type | Description |
 |:------------|:-----|:------------|
-| satisfaction_level | int64 | The employee's self-reported satisfaction level [0-1] |
-| last_evaluation | int64 | Score of employee's last performance review [0-1] |
+| satisfaction_level | float64 | The employee's self-reported satisfaction level [0-1] |
+| last_evaluation | float64 | Score of employee's last performance review [0-1] |
 | number_project | int64 | Number of projects employee contributes to |
 | average_monthly_hours | int64 | Average number of hours employee worked per month |
 | time_spend_company | int64 | How long the employee has been with the company (years) |
