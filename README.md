@@ -8,9 +8,8 @@ Goal: Data-driven suggestions to HR management, based EDA findings and modeling 
 # Dataset Description:
 Describe the dataset and any preprocessing steps.
 
-
 | Column name | Type | Description |
-|-------------|------|-------------|
+|:------------|:-----|:------------|
 | satisfaction_level | int64 | The employee's self-reported satisfaction level [0-1] |
 | last_evaluation | int64 | Score of employee's last performance review [0-1] |
 | number_project | int64 | Number of projects employee contributes to |
@@ -21,9 +20,6 @@ Describe the dataset and any preprocessing steps.
 | promotion_last_5years | int64 | Whether or not the employee was promoted in the last 5 years |
 | department | str | The employee's department |
 | salary | str | The employee's salary (low, medium, or high) |
-
-
-
 
 # EDA Findings:
 A brief summary of your Exploratory Data Analysis (EDA) insights. Include a few key graphs (saved as images in the images/ folder).
