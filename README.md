@@ -1,7 +1,8 @@
 # salifort_motor
 ## Analysis of HR data Salifort Motor Co.
 
-# Project Title & Description: A brief summary of the project.
+# Project Title & Description:
+A brief summary of the project.
 
 # Objective:
 What was the aim of your project? What problem are you solving?
