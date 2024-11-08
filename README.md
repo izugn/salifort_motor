@@ -21,8 +21,22 @@ Source: .CSV file; Shape: (14999, 10)
 | department | str | The employee's department |
 | salary | str | The employee's salary (low, medium, or high) |
 
-# EDA Findings:
-A brief summary of your Exploratory Data Analysis (EDA) insights. Include a few key graphs (saved as images in the images/ folder).
+# Data Exploration (Initial EDA and data cleaning):
+Data exploration, cleaning, data manipulation and modeling performed in Python programming language.
+
+# Common file structure references
+- [Data Processing Script](./src/process_data.py)
+- [SQL Queries](/sql/employee_queries.sql)
+- [Requirements](./requirements.txt)
+- [Configuration File](./config/config.yaml)
+- [Helper Functions](../utils/helpers.py)
+
+# You can also reference specific lines in code (GitHub feature)
+[Important Function](./src/main.py#L100-L120)
+
+
+
+
 # Modeling Approach:
 Describe the machine learning models you used (e.g., Logistic Regression, Random Forest), including any preprocessing, class balancing, and hyperparameter tuning steps.
 # Key Metrics:
