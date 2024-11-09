@@ -3,7 +3,7 @@
 # Objective:
 The HR department at Salifort Motors wants to take some initiatives to improve employee satisfaction levels at the company.
 - Main problem: What are the major drivers of employee turnover? What’s likely to make an employee leave the company?
-- Goal: Data-driven suggestions to HR management, based EDA findings and modeling results.
+- Goal: Data-driven suggestions to HR management, based on EDA findings and classification model results.
 
 # Dataset Description:
 Source: .CSV file; Shape: (14999, 10)
@@ -25,6 +25,7 @@ Source: .CSV file; Shape: (14999, 10)
 Data exploration, cleaning, data manipulation and modeling performed in Python programming language.
 
 # Common file structure references
+The first step is to understand variables, clean the dataset: find missing- and redundant data, detect outliers.
 - [Data Processing Script](./src/process_data.py)
 - [SQL Queries](/sql/employee_queries.sql)
 - [Requirements](./requirements.txt)
