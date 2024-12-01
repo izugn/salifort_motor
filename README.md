@@ -29,7 +29,7 @@ Purpose of exploratory data analysis in general:
 - Discover patterns and relationships that contribute feature engineering;
 - Establish baseline understanding for interpreting model results later on.
 
-# Steps of EDA:
+# [Steps of EDA](notebooks/salifort_hr_eda.ipynb):
 - The first step is to understand variables, standardize and clean the dataset: find missing- and redundant data, detect outliers.
 Number of duplicated rows in the dataset: 3008. With several continuous variables in 10 columns, it seems unlikely that these data entries are legitimate, so I decided to frop them.
 - Outliers: I create a helper fuction to calculate number of rows containing outliers in each column, then use 'tabulate' library for representing the results.
