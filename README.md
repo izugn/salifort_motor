@@ -31,7 +31,7 @@ Purpose of exploratory data analysis in general:
 - Discover patterns and relationships that contribute feature engineering;
 - Establish baseline understanding for interpreting model results later on.
 
-# [Steps of EDA](notebooks/salifort_hr_eda.ipynb#L100-L120):
+# [Steps of EDA](notebooks/salifort_hr_eda.ipynb):
 - The first step is to understand variables, standardize and clean the dataset: find missing- and redundant data, detect outliers.
 Number of duplicated rows in the dataset: 3008. With several continuous variables in 10 columns, it seems unlikely that these data entries are legitimate, so I decided to frop them.
 - Outliers: I create a helper fuction to calculate number of rows containing outliers in each column, then use 'tabulate' library for representing the results.
@@ -52,20 +52,17 @@ Approach further segmentation and see
 - tunrover by monthly workhours and promotion;
 - turnover by monthly workhours and work accident suffered.  
  
+## Distributions:
+Turnover rates varied by department:
+Highest: HR (18.8%)
+Lowest: Management (11.93%)
+![image](https://github.com/user-attachments/assets/d6268a30-4a1d-49e2-b1ae-9e78fb9f45d2)
 
 
-
-- [Data Processing Script](./src/process_data.py)
-- [SQL Queries](/sql/employee_queries.sql)
-- [Requirements](./requirements.txt)
-- [Configuration File](./config/config.yaml)
-- [Helper Functions](../utils/helpers.py)
-
-# You can also reference specific lines in code (GitHub feature)
-[Important Function](./src/main.py#L100-L120)
-
-
-
+Turnover rates by salary level:
+Low: 20.45%
+Medium: 14.62%
+High: 4.85%
 
 # Modeling Approach:
 Describe the machine learning models you used (e.g., Logistic Regression, Random Forest), including any preprocessing, class balancing, and hyperparameter tuning steps.
@@ -75,9 +72,4 @@ Summarize the model performance metrics (e.g., accuracy, AUC, F1-score). You can
 Include important graphs like ROC curves, feature importance plots, and confusion matrices. These can be stored in the images/ folder and linked in the README.
 # Business Recommendations:
 Based on your model, summarize your findings and recommendations (e.g., which factors most influence employee turnover).
-# Future Work:
-Suggest improvements or future analysis.
-# Ethical Considerations:
-Add any ethical concerns you encountered.
-# Code:
-Briefly explain where to find the key parts of your code (e.g., data preprocessing, modeling, evaluation).
+
