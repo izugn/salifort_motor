@@ -23,9 +23,35 @@ Source: .CSV file; Shape: (14999, 10)
 
 # Data Exploration (Initial EDA and data cleaning):
 Data exploration, cleaning, data manipulation and modeling performed in Python programming language.
+Purpose of exploratory data analysis in general:
+- Identify potential predictive features for modeling;
+- Understand data quality issues (duplicates, outliers);
+- Discover patterns and relationships that contribute feature engineering;
+- Establish baseline understanding for interpreting model results later on.
 
-# Common file structure references
-The first step is to understand variables, clean the dataset: find missing- and redundant data, detect outliers.
+# Steps of EDA:
+- The first step is to understand variables, standardize and clean the dataset: find missing- and redundant data, detect outliers.
+Number of duplicated rows in the dataset: 3008. With several continuous variables in 10 columns, it seems unlikely that these data entries are legitimate, so I decided to frop them.
+- Outliers: I create a helper fuction to calculate number of rows containing outliers in each column, then use 'tabulate' library for representing the results.
+Column 'time_spend_company' showing the lenght of tenure is the only non-binary column shownig 824 outliers. This can be a concern later, when I build a logistic regression model, which is more sensitive to out;iers that others. I shall consider removing these outliers based on the type of model I apply.
+
+Next, I perform several EDA steps and analyze relationships between variables
+- Calculate department size and turnover rates (how many employees left / stayed).
+Approach further segmentation and see
+- mean satisfaction level by department;
+- satisfaction levels by number of years spent at the company;
+- relation between years at the company and turnover rates;
+- mean monthly worktime by department;
+- satisfaction levels vs. average monthly workhours;
+- average monthly worktime vs. employees' evaluation score;
+- turnover rates by the number of projects employees were involved in;
+- relations between salary levels and years spent at the company;
+- tunrover by monthly workhours and promotion;
+- turnover by monthly workhours and work accident suffered.  
+ 
+
+
+
 - [Data Processing Script](./src/process_data.py)
 - [SQL Queries](/sql/employee_queries.sql)
 - [Requirements](./requirements.txt)
