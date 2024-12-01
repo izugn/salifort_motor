@@ -35,8 +35,9 @@ Number of duplicated rows in the dataset: 3008. With several continuous variable
 - Outliers: I create a helper fuction to calculate number of rows containing outliers in each column, then use 'tabulate' library for representing the results.
 Column 'time_spend_company' showing the lenght of tenure is the only non-binary column shownig 824 outliers. This can be a concern later, when I build a logistic regression model, which is more sensitive to out;iers that others. I shall consider removing these outliers based on the type of model I apply.
 
-Next, I perform several EDA steps and analyze relationships between variables
+Next, I analyze relationships between variables:
 - Calculate department size and turnover rates (how many employees left / stayed).
+
 Approach further segmentation and see
 - mean satisfaction level by department;
 - satisfaction levels by number of years spent at the company;
