@@ -59,12 +59,28 @@ Turnover rates varied by department between 11.93% - 18.8%.
 
 ![image](https://github.com/user-attachments/assets/d6268a30-4a1d-49e2-b1ae-9e78fb9f45d2)
 
-By Observing the satisfaction levels, we can conclude that
+## Satisfaction levels accross departments:
 - Across all departments, employees who stayed (blue) generally show higher median satisfaction levels (middle line in box) than those who left (orange);
 - The satisfaction levels for those who left are consistently lower and show more variation (longer boxes) in most departments;
 - At 'IT' and 'R&D' the distributions for those who stayed is more compact, suggesting more consistent satisfaction levels;
 - The presence of outliers (dots beyond the whiskers) in some departments indicates individual cases that deviate significantly from the typical pattern. 'HR' boxplot shows, a more consistent and but lower satisfaction level for people who left. Those who stayed show more variable satisfaction levels, suggesting that employees might stay in HR even with varying levels of satisfaction. The department shows one of the larger gaps between median satisfaction of stayers versus leavers.
 ![image](https://github.com/user-attachments/assets/74caf2bf-10c1-4a42-9759-4608da96a634)
+
+## Satisfaction and tenure:
+- Years 2-4: High variation in satisfaction for those who stayed, while leavers show declining satisfaction;
+- Year 4: Notable drop in satisfaction for leavers, with tight clustering around 0.1;
+- Years 5-6: Interesting reversal - leavers show higher satisfaction (0.7-0.9) than stayers (0.2-0.7);
+- Years 7+: No employees left the company, with satisfaction levels stabilizing around 0.5-0.8.
+
+Highest employee count is at 3 years tenure (~5000 total), turnover peaks at years 3-5, with significant proportions leaving.
+Sharp contrast after 7 years - zero turnover and smaller employee population, year 10 shows stable retention with about 100 employees.
+- Critical retention period is years 3-5;
+- After 7 years, turnover drops to zero, suggesting strong long-term retention;
+- Mid-tenure (5-6 years) shows counterintuitive pattern where highly satisfied employees are leaving.
+
+
+![image](https://github.com/user-attachments/assets/9e1ab386-027d-4ceb-8ee6-fb30646a022c)
+![image](https://github.com/user-attachments/assets/9fdef7c9-b72d-4241-9d5e-42272fd80857)
 
 
 # Modeling Approach:
