@@ -53,16 +53,19 @@ Approach further segmentation and see
 - turnover by monthly workhours and work accident suffered.  
  
 ## Distributions:
-Turnover rates varied by department:
-Highest: HR (18.8%)
-Lowest: Management (11.93%)
+Turnover rates varied by department between 11.93% - 18.8%.
+- Highest: HR (18.8%), accounting (17.5%), technical (17.4%), support (17,1%) and sales (17%). 
+- Lowest: Management (11.93%) and R&D (12.2%).
+
 ![image](https://github.com/user-attachments/assets/d6268a30-4a1d-49e2-b1ae-9e78fb9f45d2)
 
+By Observing the satisfaction levels, we can conclude that
+- Across all departments, employees who stayed (blue) generally show higher median satisfaction levels (middle line in box) than those who left (orange);
+- The satisfaction levels for those who left are consistently lower and show more variation (longer boxes) in most departments;
+- At 'IT' and 'R&D' the distributions for those who stayed is more compact, suggesting more consistent satisfaction levels;
+- The presence of outliers (dots beyond the whiskers) in some departments indicates individual cases that deviate significantly from the typical pattern. 'HR' boxplot shows, a more consistent and but lower satisfaction level for people who left. Those who stayed show more variable satisfaction levels, suggesting that employees might stay in HR even with varying levels of satisfaction. The department shows one of the larger gaps between median satisfaction of stayers versus leavers.
+![image](https://github.com/user-attachments/assets/74caf2bf-10c1-4a42-9759-4608da96a634)
 
-Turnover rates by salary level:
-Low: 20.45%
-Medium: 14.62%
-High: 4.85%
 
 # Modeling Approach:
 Describe the machine learning models you used (e.g., Logistic Regression, Random Forest), including any preprocessing, class balancing, and hyperparameter tuning steps.
