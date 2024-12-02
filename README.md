@@ -78,9 +78,63 @@ Sharp contrast after 7 years - zero turnover and smaller employee population, ye
 - After 7 years, turnover drops to zero, suggesting strong long-term retention;
 - Mid-tenure (5-6 years) shows counterintuitive pattern where highly satisfied employees are leaving.
 
-
 ![image](https://github.com/user-attachments/assets/9e1ab386-027d-4ceb-8ee6-fb30646a022c)
 ![image](https://github.com/user-attachments/assets/9fdef7c9-b72d-4241-9d5e-42272fd80857)
+
+## Satisfaction, evaluation and average monthly working hours:
+The three charts reveal concerning patterns about work hours and employee satisfaction.
+
+- All departments show median monthly hours around 200;
+- Employees who left (orange) consistently worked longer hours across departments;
+- R&D shows highest median hours for leavers, followed by technical and accounting;
+- Considerable overtime across all departments (standard is 160 hrs/month).
+
+We can identify two distinct groups of leavers:
+  1. Low hours (140-160) with moderate satisfaction (0.3-0.4)
+  2. High hours (250-310) with very low satisfaction (0.1-0.2)
+
+The red line at 160 hours shows standard monthly workload (calculated with 40 hours workweek, and 4 weeks vacation / year.)
+- Most employees work above standard hours;
+- High concentration of stayed employees (blue) between 0.6-0.8 satisfaction;
+- We might assume correlation between excessive hours and low satisfaction leading to turnover.
+
+![image](https://github.com/user-attachments/assets/c42930db-3b6a-4213-baca-4af800b0d545)
+![image](https://github.com/user-attachments/assets/d85498b0-1234-4d18-a35c-de82e7565b59)
+![image](https://github.com/user-attachments/assets/2008415b-68bb-40e8-83b7-5c3c011c53e9)
+
+## Insights about project workload and turnover:
+- 7 projects: 100% turnover, extremely high hours (250-300);
+- 6 projects: High turnover, working 225-275 hours;
+- 2-3 projects: Lower hours (150-200) but still some turnover.
+
+Project Distribution (Right Chart):
+- Most employees handle 3-4 projects, these people seem to stay the most;
+- Sharp increase in turnover for 5+ projects, no retention at 7 projects.
+
+![image](https://github.com/user-attachments/assets/d70a3463-16bd-4116-bbb3-65705b905be0)
+
+### Additional factors - work accident, promotion and salary levels:
+#Analysis of promotion and work accident patterns:
+- Very few employees (represented by 1.0 on y-axis) received promotions in past 5 years;
+- Promoted employees generally stayed (blue dots);
+- Most promoted employees worked standard hours (around 160/month);
+- Almost no promotions for those working excessive hours (250-300);
+- Only few employees who left were promoted.
+![image](https://github.com/user-attachments/assets/0302bb00-f58d-49a9-8478-e4879c0415ad)
+
+#Low incidence of work accidents overall:
+- Slight increase in accidents for those working longer hours (250-300);
+- Most employees with accidents stayed (blue dots);
+- Some correlation between overwork and accidents for those who left;
+![image](https://github.com/user-attachments/assets/f26b091d-288c-40a8-8376-8cbdf93e1a34)
+
+# Salary distribution charts:
+- Highest concentration of employees at 2-3 years, low and medium salaries dominate early years;
+- High salaries are rare and decrease with tenure, sharp decline in all salary levels after year 3;
+- Medium salary level dominates at 7+ years, more balanced distribution of high salaries here.
+
+![image](https://github.com/user-attachments/assets/d61df3ba-0719-4b43-afce-923437833bfb)
+
 
 
 # Modeling Approach:
