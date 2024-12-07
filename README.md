@@ -172,6 +172,9 @@ Provides thorough model evaluation with multiple metrics
 Creates clear visualizations for model performance
 
 
+![Screenshot 2024-12-07 at 16 32 18](https://github.com/user-attachments/assets/d2601789-0224-46fe-9f46-a15446920101)
+![Confusion matrix cheatsheet]([https://github.com/user-attachments/assets/d2601789-0224-46fe-9f46-a15446920101](https://www.studocu.com/row/document/king-fahd-university-of-petroleum-and-minerals/calculus-3/confusion-matrix-cheatsheet/40120103))
+
 # Key Metrics:
 Summarize the model performance metrics (e.g., accuracy, AUC, F1-score). You can present them in tables or with confusion matrix images.
 # Graphs:
