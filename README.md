@@ -137,40 +137,68 @@ Project Distribution (Right Chart):
 
 
 
-# Modeling Approach:
+# Modeling Approach 1. Logistic Regression Model:
 Describe the machine learning models you used (e.g., Logistic Regression, Random Forest), including any preprocessing, class balancing, and hyperparameter tuning steps.
 
-1. Logistic Regression Model
 We can utilize logistic regression model in this binary classification task. Before splitting the data, the following preparations are done:
-- Categorical variables are handled appropriately: 'salary' is encoded using LabelEncoder; 'department' is one-hot encoded using pd.get_dummies()
+- Categorical variables converted: 'salary' is ordinal, with hierarchy in the catergories, so it is encoded using LabelEncoder; 'department' is one-hot encoded using pd.get_dummies();
 - Data types are optimized for memory efficiency: Binary columns are converted to uint8; Float columns remain as float64; Integer columns are converted to uint8
 
-Feature Engineering & Analysis
-A correlation matrix is created using a heatmap to understand relationships between numerical features;
-The model is sensitive to outliers, hence outliers in 'time_spend_company' is removed;
-Check for class imbalance in the target variable ('left'): it is not extremely imbalanced
+# Feature Engineering & Analysis
+- A correlation matrix is created to understand relationships between numerical features;
+- The model is sensitive to outliers: outliers in 'time_spend_company' are removed.
+- Data is checked for class imbalance in the target variable ('left'): There is an approximately 83%-17% split, so the data is not perfectly balanced, but it is not too imbalanced. Resampling the data is necessary.
 
-Model Development
+# Model Development
 - Data is split into three sets: 60% training, 20% validation, 20% test;
 - Features are standardized using StandardScaler;
 - Implements GridSearchCV, using 5-fold cross validation to find optimal hyperparameters
 
-Model Evaluation
-- Evaluates model performance using multiple metrics: Classification reports showing precision, recall, and F1-score;ROC curves for both validation and test sets with AUC scores
+# Model Evaluation
+- The model's performance is evaluated using precision, recall, accuracy and F1-score of the 'Classification report';
+- ROC curves for both validation and test sets with AUC scores
 - Confusion matrices for both validation and test sets
-
-Key Features
-Uses best practices for machine learning workflows
-Handles data preprocessing comprehensively
-Implements cross-validation and hyperparameter tuning
-Provides thorough model evaluation with multiple metrics
-Creates clear visualizations for model performance
-
-![Screenshot 2024-12-07 at 16 32 18](https://github.com/user-attachments/assets/d2601789-0224-46fe-9f46-a15446920101)
 [Confusion matrix cheatsheet](https://www.studocu.com/row/document/king-fahd-university-of-petroleum-and-minerals/calculus-3/confusion-matrix-cheatsheet/40120103)
 
-# Key Metrics:
-Summarize the model performance metrics (e.g., accuracy, AUC, F1-score). You can present them in tables or with confusion matrix images.
+# Model performance summary:
+## Class 0 (Employees who stayed):
+Very high precision (1.00): When the model predicts an employee will stay, it's almost always correct
+Moderate recall (0.65): The model identifies 65% of employees who actually stayed
+Good F1-score (0.79): Balanced performance for predicting employees who stay
+
+## Class 1 (Employees who left):
+Low precision (0.37): Many false positives when predicting employee departures
+Excellent recall (0.98): The model successfully identifies 98% of employees who actually left
+Moderate F1-score (0.54): The low precision impacts overall effectiveness for this class
+## Overall Model Performance:
+Accuracy: 71% overall prediction accuracy
+Precision: 0.68
+Recall: 0.82
+F1: 0.66
+Weighted Average:
+
+Precision: 0.89
+Recall: 0.71
+F1: 0.74
+
+## Business Implications:
+
+Strength in Risk Identification:
+The model excels at identifying employees at risk of leaving (98% recall)
+This allows HR to proactively intervene with almost all potential departures
+Conservative Flagging:
+The low precision (0.37) for predicting departures means the model flags many false positives
+This results in HR potentially spending resources on employees who weren't actually planning to leave
+
+## Practical Application:
+The model is better suited for a broad early warning system rather than targeted interventions
+HR should use this as an initial screening tool and conduct further assessment before major interventions
+
+## Trade-off Consideration:
+In this context, having high recall for predicting departures (Class 1) may be more valuable than high precision, since:
+
+The cost of missing an employee who might leave (false negative) is likely higher than the cost of falsely flagging an employee as a flight risk (false positive)
+It's better to proactively engage with more employees than to miss potential departures
 # Graphs:
 Include important graphs like ROC curves, feature importance plots, and confusion matrices. These can be stored in the images/ folder and linked in the README.
 # Business Recommendations:
