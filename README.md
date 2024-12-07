@@ -139,6 +139,39 @@ Project Distribution (Right Chart):
 
 # Modeling Approach:
 Describe the machine learning models you used (e.g., Logistic Regression, Random Forest), including any preprocessing, class balancing, and hyperparameter tuning steps.
+
+1. Logistic Regression Model
+We can utilize logistic regression model in this binary classification task. Before splitting the data, the following preparations are done:
+- Categorical variables are handled appropriately: 'salary' is encoded using LabelEncoder; 'department' is one-hot encoded using pd.get_dummies()
+- Data types are optimized for memory efficiency: Binary columns are converted to uint8; Float columns remain as float64; Integer columns are converted to uint8
+
+Feature Engineering & Analysis
+A correlation matrix is created using a heatmap to understand relationships between numerical features;
+The model is sensitive to outliers, hence outliers in 'time_spend_company' is removed;
+Check for class imbalance in the target variable ('left'): it is not extremely imbalanced
+Model Development
+Data is split into three sets: 60% training, 20% validation, 20% test
+Features are standardized using StandardScaler
+Implements GridSearchCV to find optimal hyperparameters for logistic regression:
+Searches through different regularization strengths (C)
+Tests both L1 and L2 penalties
+Uses 'liblinear' and 'saga' solvers
+Implements balanced class weights
+Uses 5-fold cross-validation
+Model Evaluation
+Evaluates model performance using multiple metrics:
+Classification reports showing precision, recall, and F1-score
+ROC curves for both validation and test sets with AUC scores
+Confusion matrices for both validation and test sets
+Visualizations are created using matplotlib and seaborn for easy interpretation
+Key Features
+Uses best practices for machine learning workflows
+Handles data preprocessing comprehensively
+Implements cross-validation and hyperparameter tuning
+Provides thorough model evaluation with multiple metrics
+Creates clear visualizations for model performance
+
+
 # Key Metrics:
 Summarize the model performance metrics (e.g., accuracy, AUC, F1-score). You can present them in tables or with confusion matrix images.
 # Graphs:
