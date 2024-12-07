@@ -149,28 +149,22 @@ Feature Engineering & Analysis
 A correlation matrix is created using a heatmap to understand relationships between numerical features;
 The model is sensitive to outliers, hence outliers in 'time_spend_company' is removed;
 Check for class imbalance in the target variable ('left'): it is not extremely imbalanced
+
 Model Development
-Data is split into three sets: 60% training, 20% validation, 20% test
-Features are standardized using StandardScaler
-Implements GridSearchCV to find optimal hyperparameters for logistic regression:
-Searches through different regularization strengths (C)
-Tests both L1 and L2 penalties
-Uses 'liblinear' and 'saga' solvers
-Implements balanced class weights
-Uses 5-fold cross-validation
+- Data is split into three sets: 60% training, 20% validation, 20% test;
+- Features are standardized using StandardScaler;
+- Implements GridSearchCV, using 5-fold cross validation to find optimal hyperparameters
+
 Model Evaluation
-Evaluates model performance using multiple metrics:
-Classification reports showing precision, recall, and F1-score
-ROC curves for both validation and test sets with AUC scores
-Confusion matrices for both validation and test sets
-Visualizations are created using matplotlib and seaborn for easy interpretation
+- Evaluates model performance using multiple metrics: Classification reports showing precision, recall, and F1-score;ROC curves for both validation and test sets with AUC scores
+- Confusion matrices for both validation and test sets
+
 Key Features
 Uses best practices for machine learning workflows
 Handles data preprocessing comprehensively
 Implements cross-validation and hyperparameter tuning
 Provides thorough model evaluation with multiple metrics
 Creates clear visualizations for model performance
-
 
 ![Screenshot 2024-12-07 at 16 32 18](https://github.com/user-attachments/assets/d2601789-0224-46fe-9f46-a15446920101)
 [Confusion matrix cheatsheet](https://www.studocu.com/row/document/king-fahd-university-of-petroleum-and-minerals/calculus-3/confusion-matrix-cheatsheet/40120103)
