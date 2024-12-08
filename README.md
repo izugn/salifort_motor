@@ -287,6 +287,27 @@ The model is particularly good at identifying employees likely to stay (very few
 The results suggest the model would be a reliable tool for HR to identify employees at risk of leaving, with employee satisfaction and workload being the key areas to monitor.
 
 
-# Business Recommendations:
-Based on your model, summarize your findings and recommendations (e.g., which factors most influence employee turnover).
+# Conclusions, business Recommendations:
+1. Evidence that employees are overworked:
 
+During EDA, we found average monthly hours of 200.47, significantly above the optimal 160 hours. The "overworked" feature ranked 5th in importance in the Random Forest model (7.1% importance). Strong correlation between working long hours and leaving the company. Data showed employees with 6-7 projects consistently worked excessive hours (240-315 hours/month).
+
+2. Project cap recommendation is supported by:
+
+Number of projects was the second most important feature (20.6% importance). EDA showed 100% turnover rate for employees with 7 projects. Optimal project load appeared to be 3-4 projects based on turnover rates. Strong correlation between high project numbers and excessive working hours.
+
+3. Four-year tenure concern is validated:
+
+Time spent at company was the third most important feature (18.3% importance). EDA revealed a spike in turnover at the 4-year mark (24.69% turnover rate). Clear pattern in satisfaction levels dropping at 4 years. Low promotion rates despite tenure (only 2.1% promoted in last 5 years).
+
+4. Working hours and compensation recommendations:
+
+Strong correlation between excessive hours (200+ monthly) and turnover. Many employees working significantly over standard hours (>200 monthly). Clear relationship between hours worked and evaluation scores. Evidence that high performers were often overworked but not necessarily rewarded.
+
+5. Company culture and evaluation system concerns:
+
+Satisfaction level was the most important predictor (36.2% importance). Clear pattern of high performers leaving when overworked. Last evaluation scores were the fourth most important feature (14.3%). Evidence of potential bias in evaluation system favoring long hours. 
+
+6. Work-life balance issues:
+
+Clear correlation between excessive hours and turnover. Departments showed similar patterns, indicating a company-wide issue. High performers often worked unsustainable hours. Low satisfaction scores correlated with excessive working hours.
