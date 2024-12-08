@@ -160,6 +160,7 @@ We can utilize logistic regression model in this binary classification task. Bef
 
 - Confusion matrices for both validation and test sets
 ![Screenshot 2024-12-08 at 09 04 00](https://github.com/user-attachments/assets/20f2f33a-bb22-49fa-b665-768dcd52ce72)
+
 [More about confusion matrix](https://www.studocu.com/row/document/king-fahd-university-of-petroleum-and-minerals/calculus-3/confusion-matrix-cheatsheet/40120103)
 
 - ROC curves for both validation and test sets with AUC scores
