@@ -212,8 +212,8 @@ Before splitting the data, the following preparations are done:
 
 ## Model Development
 - Data is split into 80% training, 20% test set, then the training data is further split (80/20) to training and validation sets.
-- Implements GridSearchCV, using 5-fold cross validation to find optimal hyperparameters;
-- GridSearchCV uses recall to choose the "best" model parameters. It prioritizes identifying as many employees who will leave as possible.
+- I implement GridSearchCV, using 5-fold cross validation to find optimal hyperparameters. GridSearchCV uses recall to choose the "best" model parameters. It prioritizes identifying as many employees who will leave as possible.
+
 Optimized parameters found through GridSearchCV for this Random Forest model:
 - Each tree in the forest is built using a random sample of the data. Some observations may be selected multiple times, while others may not be selected at all. This helps create diversity among the trees and reduces overfitting.
 - Having Sets maximum depth (number of levels) of each decision tree to 20 also helps control model complexity and prevent overfitting.
