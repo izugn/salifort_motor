@@ -135,60 +135,65 @@ Project Distribution (Right Chart):
 
 ![image](https://github.com/user-attachments/assets/d61df3ba-0719-4b43-afce-923437833bfb)
 
-
-
 # Modeling Approach 1. Logistic Regression Model:
-Describe the machine learning models you used (e.g., Logistic Regression, Random Forest), including any preprocessing, class balancing, and hyperparameter tuning steps.
 
 We can utilize logistic regression model in this binary classification task. Before splitting the data, the following preparations are done:
 - Categorical variables converted: 'salary' is ordinal, with hierarchy in the catergories, so it is encoded using LabelEncoder; 'department' is one-hot encoded using pd.get_dummies();
 - Data types are optimized for memory efficiency: Binary columns are converted to uint8; Float columns remain as float64; Integer columns are converted to uint8
 
-# Feature Engineering & Analysis
 - A correlation matrix is created to understand relationships between numerical features;
 - The model is sensitive to outliers: outliers in 'time_spend_company' are removed.
 - Data is checked for class imbalance in the target variable ('left'): There is an approximately 83%-17% split, so the data is not perfectly balanced, but it is not too imbalanced. Resampling the data is necessary.
 
-# Model Development
+## Model Development
 - Data is split into three sets: 60% training, 20% validation, 20% test;
 - Features are standardized using StandardScaler;
-- Implements GridSearchCV, using 5-fold cross validation to find optimal hyperparameters
+- Implements GridSearchCV, using 5-fold cross validation to find optimal hyperparameters;
+- GridSearchCV uses recall to choose the "best" model parameters. It prioritizes identifying as many employees who will leave as possible.
 
-# Model Evaluation
+## Model Evaluation
 - The model's performance is evaluated using precision, recall, accuracy and F1-score of the 'Classification report';
-- ROC curves for both validation and test sets with AUC scores
-- Confusion matrices for both validation and test sets
-[Confusion matrix cheatsheet](https://www.studocu.com/row/document/king-fahd-university-of-petroleum-and-minerals/calculus-3/confusion-matrix-cheatsheet/40120103)
+![Screenshot 2024-12-08 at 09 03 01](https://github.com/user-attachments/assets/3ddf8333-d2b2-4a56-9b7e-cc7c3521d5ec)
 
-# Model performance summary:
-## Class 0 (Employees who stayed):
+- Confusion matrices for both validation and test sets
+![Screenshot 2024-12-08 at 09 04 00](https://github.com/user-attachments/assets/20f2f33a-bb22-49fa-b665-768dcd52ce72)
+[More about confusion matrix](https://www.studocu.com/row/document/king-fahd-university-of-petroleum-and-minerals/calculus-3/confusion-matrix-cheatsheet/40120103)
+
+- ROC curves for both validation and test sets with AUC scores
+![Screenshot 2024-12-08 at 09 04 24](https://github.com/user-attachments/assets/e8db6449-7326-49ed-98ab-f37d883dce3a)
+
+## Model performance summary:
+
+### Class 0 (Employees who stayed):
 Very high precision (1.00): When the model predicts an employee will stay, it's almost always correct
 Moderate recall (0.65): The model identifies 65% of employees who actually stayed
 Good F1-score (0.79): Balanced performance for predicting employees who stay
 
-## Class 1 (Employees who left):
+### Class 1 (Employees who left):
 Low precision (0.37): Many false positives when predicting employee departures
 Excellent recall (0.98): The model successfully identifies 98% of employees who actually left
 Moderate F1-score (0.54): The low precision impacts overall effectiveness for this class
-## Overall Model Performance:
-Accuracy: 71% overall prediction accuracy
-Precision: 0.68
-Recall: 0.82
-F1: 0.66
-Weighted Average:
 
-Precision: 0.89
-Recall: 0.71
-F1: 0.74
+### AUC Scores and ROC curve:
+- Both validation and test sets have AUC = 0.87. This indicates good but not excellent discriminative ability.
+- Shows a good consistency between validation and test performance.
 
-## Business Implications:
+At a conservative threshold (around False positive rate = 0.2), the model catches ~90% of employees likely to leave, while the false positive rate is 20%.
+Going further, at a 40% false positive rate, it catches ~95% of likely leavers.
 
-Strength in Risk Identification:
-The model excels at identifying employees at risk of leaving (98% recall)
-This allows HR to proactively intervene with almost all potential departures
-Conservative Flagging:
-The low precision (0.37) for predicting departures means the model flags many false positives
-This results in HR potentially spending resources on employees who weren't actually planning to leave
+Advantages of the model:
+- Catches 98% of employees who might leave - very few employees who leave are missed: Allows for early intervention.
+
+Disadvantages:
+- Many false alarms (63% of predicted leavers actually stay), could lead to unnecessary HR interventions;
+- This may waste resources investigating false positives.
+
+As an alternative approaches chosing 'precision' for scoring would result fewer false alarms, but might miss leavers. Scoring='f1' would balance between precision and recall. 'accuracy' might give an overall correctness but again, we might ignore minority class, which are the potential leavers.
+
+### Overall Model Performance:
+It indicates the model is reliable when predicting employees will stay, also good at identifying potential leavers, but with many false alarms. All in all, it is suited for initial screening than final decision-making.
+This allows HR to proactively intervene with almost all potential leavers. On the other hand low precision (0.37) means the model flags many false positives.
+This results in HR potentially spending resources on employees who weren't actually planning to leave.
 
 ## Practical Application:
 The model is better suited for a broad early warning system rather than targeted interventions
