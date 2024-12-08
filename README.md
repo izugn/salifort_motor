@@ -224,21 +224,68 @@ When splitting a node, only a random subset of features is considered: the size 
 
 ## Model Evaluation
 - The model's performance is evaluated using precision, recall, accuracy and F1-score of the 'Classification report':
+
 ![Screenshot 2024-12-08 at 11 00 03](https://github.com/user-attachments/assets/f23626a4-33c6-49f0-90c5-6af2b23e15ab)
 
 - Confusion matrices for both validation and test sets;
+
 ![image](https://github.com/user-attachments/assets/c7241957-392a-4e17-bd59-95dc5b1caf4b)
 ![image](https://github.com/user-attachments/assets/df7e8cc2-f360-4a54-90e7-fc93d38dc599)
 [More about confusion matrix](https://www.studocu.com/row/document/king-fahd-university-of-petroleum-and-minerals/calculus-3/confusion-matrix-cheatsheet/40120103)
 
 - ROC curves for both validation and test sets with AUC scores
+
 ![image](https://github.com/user-attachments/assets/e4112fdb-d0e9-41c2-867c-e07a550928f5)
 
 - Feature importance chart (ordered from high to low)
+
 ![image](https://github.com/user-attachments/assets/da7d9eb9-7fe2-4bed-a456-463f30923146)
 
 
 ## Model performance summary:
+
+Overall Accuracy: The model performed well, achieving 98% accuracy on both validation and test sets. This indicates consistent and reliable performance.
+### Class 0 (Employees who stayed) (Test Set):
+- Precision: 99%
+- Recall: 100%
+- F1-score: 99%
+### Class 1 (Employees who left) (Test Set):
+- Precision: 98%
+- Recall: 92%
+- F1-score: 95%
+
+The similar performance across validation and test sets suggests the model is robust and not overfitted. The high precision and recall values indicate reliable predictions for both employees staying and leaving.
+
+### Confusion Matrix Analysis (Test Set):
+- True Negatives (correctly predicted stays): 1994
+- False Positives (incorrectly predicted departures): 7
+- False Negatives (missed departures): 30
+- True Positives (correctly predicted departures): 368
+
+The model is particularly good at identifying employees likely to stay (very few false positives).
+
+### ROC Curve Analysis:
+- The model achieved an AUC-ROC score of 0.98;
+- The ROC curve shows strong separation from the diagonal line, indicating good discriminative ability;
+- A high true positive rate achieved with minimal false positive rate increase.
+
+### Feature Importance (in descending order):
+1. Satisfaction level (36.2%)
+2. Number of projects (20.6%)
+3. Time spent at company (18.3%)
+4. Last evaluation (14.3%)
+5. Overworked status (7.1%)
+6. Other features (salary, work accident, department, etc.) each contributed less than 1%
+
+## Key Insights:
+
+- Employee satisfaction is by far the most crucial predictor of turnover
+- Workload (number of projects) and tenure are also significant factors
+- Performance evaluations have moderate importance
+- Department-specific factors have minimal impact on turnover decisions
+
+The results suggest the model would be a reliable tool for HR to identify employees at risk of leaving, with employee satisfaction and workload being the key areas to monitor.
+
 
 # Business Recommendations:
 Based on your model, summarize your findings and recommendations (e.g., which factors most influence employee turnover).
