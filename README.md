@@ -210,7 +210,35 @@ Before splitting the data, the following preparations are done:
 - A new variable is introduced: 'overworked' that comes from the conversion of 'average_monthly_hours'. This is an ordinal categorical variable, that takes 0 (below 161h) 1 (161 - 200h), or 2 (200+ hours). Hence 'average_monthly_hours' is dropped.
 - Data types are optimized for memory efficiency: Binary columns are converted to uint8; Float columns remain as float64; Integer columns are converted to uint8.
 
+## Model Development
+- Data is split into 80% training, 20% test set, then the training data is further split (80/20) to training and validation sets.
+- Implements GridSearchCV, using 5-fold cross validation to find optimal hyperparameters;
+- GridSearchCV uses recall to choose the "best" model parameters. It prioritizes identifying as many employees who will leave as possible.
+Optimized parameters found through GridSearchCV for this Random Forest model:
+- Each tree in the forest is built using a random sample of the data. Some observations may be selected multiple times, while others may not be selected at all. This helps create diversity among the trees and reduces overfitting.
+- Having Sets maximum depth (number of levels) of each decision tree to 20 also helps control model complexity and prevent overfitting.
+When splitting a node, only a random subset of features is considered: the size of this subset is the square root of the total number of features. It helps ensure diversity among trees by making them focus on different features.
+- Each leaf node (end node) must contain at least 1 sample.
+- A node must contain at least 5 samples to be considered for splitting.
+- The forest contains 300 individual decision trees, which is large enough to ensure stable predictions.
 
+## Model Evaluation
+- The model's performance is evaluated using precision, recall, accuracy and F1-score of the 'Classification report':
+![Screenshot 2024-12-08 at 11 00 03](https://github.com/user-attachments/assets/f23626a4-33c6-49f0-90c5-6af2b23e15ab)
+
+- Confusion matrices for both validation and test sets;
+![image](https://github.com/user-attachments/assets/c7241957-392a-4e17-bd59-95dc5b1caf4b)
+![image](https://github.com/user-attachments/assets/df7e8cc2-f360-4a54-90e7-fc93d38dc599)
+[More about confusion matrix](https://www.studocu.com/row/document/king-fahd-university-of-petroleum-and-minerals/calculus-3/confusion-matrix-cheatsheet/40120103)
+
+- ROC curves for both validation and test sets with AUC scores
+![image](https://github.com/user-attachments/assets/e4112fdb-d0e9-41c2-867c-e07a550928f5)
+
+- Feature importance chart (ordered from high to low)
+![image](https://github.com/user-attachments/assets/da7d9eb9-7fe2-4bed-a456-463f30923146)
+
+
+## Model performance summary:
 
 # Business Recommendations:
 Based on your model, summarize your findings and recommendations (e.g., which factors most influence employee turnover).
