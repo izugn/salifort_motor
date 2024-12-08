@@ -31,7 +31,9 @@ Purpose of exploratory data analysis in general:
 - Discover patterns and relationships that contribute feature engineering;
 - Establish baseline understanding for interpreting model results later on.
 
-# [Steps of EDA](notebooks/salifort_hr_eda.ipynb):
+# Steps of EDA:
+[Link to notebook](notebooks/salifort_hr_eda.ipynb)
+
 - The first step is to understand variables, standardize and clean the dataset: find missing- and redundant data, detect outliers.
 Number of duplicated rows in the dataset: 3008. With several continuous variables in 10 columns, it seems unlikely that these data entries are legitimate, so I decided to frop them.
 - Outliers: I create a helper fuction to calculate number of rows containing outliers in each column, then use 'tabulate' library for representing the results.
@@ -128,7 +130,7 @@ Project Distribution (Right Chart):
 - Some correlation between overwork and accidents for those who left;
 ![image](https://github.com/user-attachments/assets/f26b091d-288c-40a8-8376-8cbdf93e1a34)
 
-# Salary distribution charts:
+#Salary distribution charts:
 - Highest concentration of employees at 2-3 years, low and medium salaries dominate early years;
 - High salaries are rare and decrease with tenure, sharp decline in all salary levels after year 3;
 - Medium salary level dominates at 7+ years, more balanced distribution of high salaries here.
@@ -136,6 +138,7 @@ Project Distribution (Right Chart):
 ![image](https://github.com/user-attachments/assets/d61df3ba-0719-4b43-afce-923437833bfb)
 
 # Modeling Approach 1. Logistic Regression Model:
+[Link to notebook](notebooks/salifort_logreg.ipynb)
 
 We can utilize logistic regression model in this binary classification task. Before splitting the data, the following preparations are done:
 - Categorical variables converted: 'salary' is ordinal, with hierarchy in the catergories, so it is encoded using LabelEncoder; 'department' is one-hot encoded using pd.get_dummies();
@@ -162,7 +165,7 @@ We can utilize logistic regression model in this binary classification task. Bef
 - ROC curves for both validation and test sets with AUC scores
 ![Screenshot 2024-12-08 at 09 04 24](https://github.com/user-attachments/assets/e8db6449-7326-49ed-98ab-f37d883dce3a)
 
-## Model performance summary:
+## Model performance summary (Logistic regression):
 
 ### Class 0 (Employees who stayed):
 Very high precision (1.00): When the model predicts an employee will stay, it's almost always correct
@@ -197,6 +200,7 @@ This allows HR to proactively intervene with almost all potential leavers. On th
 This results in HR potentially spending resources on employees who weren't actually planning to leave.
 
 # Modeling Approach 2. Random Forest Model:
+[Link to notebook](notebooks/salifort_randomf.ipynb)
 
 Secondly I chose building a random forests model. In general, it provides a robust measure of feature importance that shows the relative contribution of each variable to predicting employee turnover. Unlike simpler models, it captures non-linear relationships and complex interactions between variables.
 It is not sensitive to outliers or unusual patterns in individual variables.
@@ -242,7 +246,7 @@ When splitting a node, only a random subset of features is considered: the size 
 ![image](https://github.com/user-attachments/assets/da7d9eb9-7fe2-4bed-a456-463f30923146)
 
 
-## Model performance summary:
+## Model performance summary (Random forest):
 
 Overall Accuracy: The model performed well, achieving 98% accuracy on both validation and test sets. This indicates consistent and reliable performance.
 ### Class 0 (Employees who stayed) (Test Set):
