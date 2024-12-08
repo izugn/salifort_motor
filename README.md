@@ -179,6 +179,7 @@ Moderate F1-score (0.54): The low precision impacts overall effectiveness for th
 - Shows a good consistency between validation and test performance.
 
 At a conservative threshold (around False positive rate = 0.2), the model catches ~90% of employees likely to leave, while the false positive rate is 20%.
+This appears to be a sweet spot, where it balances catching most potential leavers while keeping false alarms manageable.
 Going further, at a 40% false positive rate, it catches ~95% of likely leavers.
 
 Advantages of the model:
@@ -195,17 +196,22 @@ It indicates the model is reliable when predicting employees will stay, also goo
 This allows HR to proactively intervene with almost all potential leavers. On the other hand low precision (0.37) means the model flags many false positives.
 This results in HR potentially spending resources on employees who weren't actually planning to leave.
 
-## Practical Application:
-The model is better suited for a broad early warning system rather than targeted interventions
-HR should use this as an initial screening tool and conduct further assessment before major interventions
+# Modeling Approach 2. Random Forest Model:
 
-## Trade-off Consideration:
-In this context, having high recall for predicting departures (Class 1) may be more valuable than high precision, since:
+Secondly I chose building a random forests model. In general, it provides a robust measure of feature importance that shows the relative contribution of each variable to predicting employee turnover. Unlike simpler models, it captures non-linear relationships and complex interactions between variables.
+It is not sensitive to outliers or unusual patterns in individual variables.
+Employee turnover decisions typically involve multiple interacting factors, and a random forests model can capture complex patterns like:
+- How satisfaction levels might interact with workload;
+- How time spant at the company interacts with performance evaluations;
+- How combinations of factors together influence turnover risk.
 
-The cost of missing an employee who might leave (false negative) is likely higher than the cost of falsely flagging an employee as a flight risk (false positive)
-It's better to proactively engage with more employees than to miss potential departures
-# Graphs:
-Include important graphs like ROC curves, feature importance plots, and confusion matrices. These can be stored in the images/ folder and linked in the README.
+Before splitting the data, the following preparations are done:
+- Categorical variables converted: 'salary' is ordinal, with hierarchy in the catergories, so it is encoded using LabelEncoder; 'department' is one-hot encoded using pd.get_dummies();
+- A new variable is introduced: 'overworked' that comes from the conversion of 'average_monthly_hours'. This is an ordinal categorical variable, that takes 0 (below 161h) 1 (161 - 200h), or 2 (200+ hours). Hence 'average_monthly_hours' is dropped.
+- Data types are optimized for memory efficiency: Binary columns are converted to uint8; Float columns remain as float64; Integer columns are converted to uint8.
+
+
+
 # Business Recommendations:
 Based on your model, summarize your findings and recommendations (e.g., which factors most influence employee turnover).
 
