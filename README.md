@@ -279,15 +279,15 @@ The model is particularly good at identifying employees likely to stay (very few
 
 ## Key Insights:
 
-- Employee satisfaction is by far the most crucial predictor of turnover
-- Workload (number of projects) and tenure are also significant factors
-- Performance evaluations have moderate importance
-- Department-specific factors have minimal impact on turnover decisions
+- Employee satisfaction is by far the most crucial predictor of turnover;
+- Workload (number of projects) and tenure are also significant factors;
+- Performance evaluations have moderate importance;
+- Department-specific factors have minimal impact on turnover decisions.
 
 The results suggest the model would be a reliable tool for HR to identify employees at risk of leaving, with employee satisfaction and workload being the key areas to monitor.
 
 
-# Conclusions, business Recommendations:
+# Conclusions, business recommendations:
 1. Evidence that employees are overworked:
 
 During EDA, we found average monthly hours of 200.47, significantly above the optimal 160 hours. The "overworked" feature ranked 5th in importance in the Random Forest model (7.1% importance). Strong correlation between working long hours and leaving the company. Data showed employees with 6-7 projects consistently worked excessive hours (240-315 hours/month).
